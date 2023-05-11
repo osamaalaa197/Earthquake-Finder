@@ -1,0 +1,252 @@
+:root {
+  --color-light: #eee;
+  --color-dark: #222831;
+  --color-orange: #db6400;
+
+  --background: var(--color-light);
+  --foreground: var(--color-dark);
+}
+
+.darkmode {
+  --color-light: #eee;
+  --color-dark: #222831;
+  --color-orange: #db6400;
+
+  --background: var(--color-dark);
+  --foreground: var(--color-light);
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.back {
+  background-color: #0366d6;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.leg {
+  width: 80%;
+  text-align: center;
+  /* margin: 0 auto; */
+  display: none;
+  left: 10%;
+  position: relative;
+}
+#legend {
+  /* width: 200px;
+  height: 100px; */
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left, #00c853, #b2ff59);
+  margin-bottom: 40px;
+  border-radius: 15px;
+  text-align: center;
+}
+#pin-legend {
+  /* width: 50px; */
+  height: 50px;
+}
+#min-legend {
+  /* width: 50px; */
+  height: 50px;
+}
+#avg-legend {
+  /* width: 50px; */
+  height: 60px;
+}
+#max-legend {
+  /* width: 50px; */
+  height: 70px;
+}
+
+/* //////////////////////////////////////// */
+#map {
+  width: 80%;
+  height: 700px;
+  margin: 0 auto;
+  border: black 5px solid;
+  opacity: 1;
+  /* border-radius: 20%; */
+}
+
+#map:hover {
+  cursor: pointer;
+  border: red 5px solid;
+}
+.result {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.header {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  background-color: #198754;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 35px;
+  margin: 0 auto;
+  width: 80%;
+
+  /* border: black solid 2px */
+}
+
+.box {
+  display: flex;
+  justify-content: space-evenly;
+
+  /* border: red solid 1px */
+}
+.component {
+  width: 700px;
+  /* border: blue solid 1px */
+  position: relative;
+}
+h2 {
+  font-size: 25px;
+}
+form input {
+  display: block;
+  font-size: 20px;
+  margin: 0 auto;
+
+  padding: 5px 12px;
+
+  line-height: 20px;
+  color: #24292e;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: rgba(225, 228, 232, 0.2) 0px 1px 0px 0px inset;
+}
+
+form input:focus {
+  border-color: #0366d6;
+  outline: none;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+form {
+  width: 80%;
+  text-align: center;
+  /* border: black solid 2px; */
+  margin: 0 auto;
+}
+
+.sub {
+  font-weight: 500;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  /* transition: all;
+  transition-duration: 5s; */
+  margin-bottom: 20px;
+}
+
+.sub:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #e9555598;
+  background: linear-gradient(0deg, rgb(201, 1, 1) 0%, rgb(240, 113, 124) 100%);
+}
+
+.sub:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+/* ///////////////////////list///////////////////////////////// */
+.component li:hover {
+  background-color: #198754;
+  color: var(--background);
+  cursor: pointer;
+  font-size: 18px;
+}
+.component li {
+  color: var(--foreground);
+}
+.drop {
+  background-color: var(--background);
+  position: absolute;
+  top: 85px;
+  left: 220px;
+}
+
+.message {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+.description {
+  color: red;
+}
+
+.toggle-darkmode {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+
+  border-radius: 3px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-text {
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 3px;
+  cursor: pointer;
+  color: white;
+  background-color: #222831;
+}
+
+label {
+  font-size: 22px;
+}
+
+div.popup {
+  min-width: 140px;
+  max-width: 200px;
+  background-color: rgba(211, 243, 255, 0.6);
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 10px;
+}
